@@ -17,6 +17,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   fullName: z.string().min(3, "Full name is required"),
@@ -47,33 +48,32 @@ const SignUp = () => {
     resolver: zodResolver(formSchema),
   });
   const onSubmit = async (data: FormData) => {
-    // try {
-    //   const response = await fetch("/api/users/signup", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(data),
-    //   });
+    try {
+      const response = await fetch("/api/users/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    //   if (response.ok) {
-    //     const result = await response.json();
-    //     toast.success("User created successfully!");
-    //     router.push("/home");
-    //   } else {
-    //     const errorData = await response.json();
-    //     toast.error("Error: " + errorData.error);
-    //   }
-    // } catch (error) {
-    //   toast.error("Error");
-    //   console.error("Error:", error);
-    // }
-    console.log(data);
+      if (response.ok) {
+        const result = await response.json();
+        toast.success("User created successfully!");
+        router.push("/home");
+      } else {
+        const errorData = await response.json();
+        toast.error("Error: " + errorData.error);
+      }
+    } catch (error) {
+      toast.error("Error");
+      console.error("Error:", error);
+    }
   };
 
   return (
     <div className=" flex items-center justify-center h-screen">
-      <Card className="w-[350px]">
+      <Card className="w-[350px] shadow-xl">
         <CardHeader>
           <CardTitle>SignUp</CardTitle>
           <CardDescription>Create an account to get started.</CardDescription>
@@ -151,11 +151,11 @@ const SignUp = () => {
               Submit
             </Button>
             <Button variant="outline" className="w-full">
-              Sign up with GitHub
+              Sign up with Google
             </Button>
             <div className="mt-4 text-center text-sm">
               Already have an account?{" "}
-              <Link href="#" className="underline">
+              <Link href="/auth/login" className="underline">
                 Sign in
               </Link>
             </div>

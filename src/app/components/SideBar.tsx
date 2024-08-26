@@ -1,4 +1,4 @@
-import { Avatar } from "@/components/ui/avatar";
+"use client";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
@@ -9,9 +9,9 @@ import {
   MessageCircleMore,
   Phone,
   Settings,
-  Star,
 } from "lucide-react";
-import { Profile } from "./Avatar";
+import { AvatarDemo } from "./Avatar";
+import { FaRegStar } from "react-icons/fa";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -20,9 +20,6 @@ const Sidebar = ({ className }: SidebarProps) => {
     <div className={cn("pb-12", className)}>
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
-          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-            Chats
-          </h2>
           <div className="space-y-1">
             <Button variant="secondary" className="w-full justify-start gap-4">
               <MessageCircleMore />
@@ -48,7 +45,9 @@ const Sidebar = ({ className }: SidebarProps) => {
         <div className="px-3 py-2">
           <div className="space-y-1">
             <Button variant="ghost" className="w-full justify-start gap-4">
-              <Star />
+              <span className=" text-lg">
+                <FaRegStar />
+              </span>
               Starred Message
             </Button>
             <Button variant="ghost" className="w-full justify-start gap-4">
@@ -66,7 +65,7 @@ const Sidebar = ({ className }: SidebarProps) => {
             </Button>
           </div>
           <Button variant="ghost" className="w-full justify-start gap-4 my-5">
-            <Profile />
+            <AvatarDemo />
             Profile
           </Button>
         </div>

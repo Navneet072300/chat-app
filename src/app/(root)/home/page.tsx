@@ -1,3 +1,4 @@
+import ChatArea from "@/app/components/ChatArea";
 import SideBar from "@/app/components/SideBar";
 import UserChat from "@/app/components/UserChat";
 import { Separator } from "@/components/ui/separator";
@@ -15,7 +16,9 @@ const Home = () => {
         <UserChat />
       </div>
       <Separator orientation="vertical" className="h-full text-black" />
-      <div className="flex-[4] ">Column 3</div>
+      <div className="flex-[4] ">
+        <ChatArea />
+      </div>
     </div>
   );
 };

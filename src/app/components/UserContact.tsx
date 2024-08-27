@@ -9,7 +9,7 @@ const UserContact = () => {
           {data.map((user) => (
             <div
               key={user.userId}
-              className="flex items-center space-x-4 p-4 bg-[#fed7aa] rounded-lg mb-2"
+              className="flex items-center space-x-4 p-4 hover:bg-[#e5e5e5] rounded-lg mb-2"
             >
               <img
                 src={user.avatar}

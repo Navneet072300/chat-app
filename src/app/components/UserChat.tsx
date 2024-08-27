@@ -41,14 +41,14 @@ const UserChat = () => {
           </TooltipProvider>
         </div>
       </div>
-      <div className="relative mx-3">
+      <div className="relative mx-3 border-[3px] border-gray-900 rounded-lg">
         <span className="absolute inset-y-0 left-0 flex items-center pl-3">
           <Search className="text-gray-500" />
         </span>
         <Input
           type="search"
           placeholder="Search"
-          className="pl-10 pr-4 py-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="pl-10 pr-4 py-2 w-full border rounded-md  "
         />
       </div>
       <div className=" m-4 ">

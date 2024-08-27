@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { AvatarDemo } from "./Avatar";
 import { FaRegStar } from "react-icons/fa";
+import Logout from "./Logout";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -45,7 +46,7 @@ const Sidebar = ({ className }: SidebarProps) => {
         <div className="px-3 py-2">
           <div className="space-y-1">
             <Button variant="ghost" className="w-full justify-start gap-4">
-              <span className=" text-lg">
+              <span className=" text-xl">
                 <FaRegStar />
               </span>
               Starred Message
@@ -68,6 +69,9 @@ const Sidebar = ({ className }: SidebarProps) => {
             <AvatarDemo />
             Profile
           </Button>
+        </div>
+        <div className=" fixed bottom-0 m-5 p-3">
+          <Logout />
         </div>
       </div>
     </div>

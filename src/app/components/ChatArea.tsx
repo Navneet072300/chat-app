@@ -20,7 +20,7 @@ const ChatArea = () => {
         <ChatNavbar />
       </div>
       <div></div>
-      <div className="flex fixed bottom-0 m-5 w-full max-w-sm items-center justify-between space-x-2">
+      <div className="flex fixed bottom-0 m-3 w-full max-w-sm items-center justify-between ">
         <span className="flex items-center justify-center">
           <Button variant="ghost">
             <Smile className="text-xl font-semibold cursor-pointer" />
@@ -34,7 +34,7 @@ const ChatArea = () => {
           <Input
             type="text"
             placeholder="Type a message"
-            className="flex-grow px-4 py-2 w-[40rem] h-[3.5rem]"
+            className="flex-grow px-3 py-2 w-[40rem] h-[3.5rem]"
           />
         </span>
         <span className="text-right">

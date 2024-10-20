@@ -12,12 +12,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { Eye, EyeOff } from "lucide-react";
 
 const formSchema = z.object({
   fullName: z.string().min(3, "Full name is required"),
@@ -137,7 +138,7 @@ const SignUp = () => {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute inset-y-0 right-0 px-3 py-2 text-gray-600 focus:outline-none"
                   >
-                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    {showPassword ? <EyeOff /> : <Eye />}
                   </button>
                 </div>
                 {errors.password && (

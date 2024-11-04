@@ -14,6 +14,7 @@ import {
 import { AvatarDemo } from "./Avatar";
 
 import Logout from "./Logout";
+import { UserButton } from "@clerk/nextjs";
 
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -67,12 +68,9 @@ const Sidebar = ({ className }: SidebarProps) => {
             </Button>
           </div>
           <Button variant="ghost" className="w-full justify-start gap-4 my-5">
-            <AvatarDemo />
+            <UserButton />
             Profile
           </Button>
-        </div>
-        <div className=" fixed bottom-0 m-5 p-3">
-          <Logout />
         </div>
       </div>
     </div>
